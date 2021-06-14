@@ -18,11 +18,7 @@ class FilterViewController: UIViewController {
         }
     }
     //creating tableView
-    private let tableView:UITableView = {
-        let tableView = UITableView(frame: .zero, style: .grouped)
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        return tableView
-    }()
+    private let tableView:UITableView = Configuration.shared.configuredTableViewFilter
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -36,12 +32,9 @@ class FilterViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         fetchStates()
-        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(didTapClose))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(Configuration.shared.didTapClose))
     }
     
-    @objc private func didTapClose(){
-        dismiss(animated: true, completion: nil)
-    }
     
     
     

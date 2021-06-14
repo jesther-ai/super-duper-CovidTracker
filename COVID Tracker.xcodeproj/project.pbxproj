@@ -3,11 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		30B89EBCFCE3A0794BFEEFBE /* Pods_COVID_Tracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 897A1F8F96EEC59329DB1EC8 /* Pods_COVID_Tracker.framework */; };
+		4538BCCF2676F645009D3EF7 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4538BCCE2676F645009D3EF7 /* Models.swift */; };
+		4538BCD22676F75D009D3EF7 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4538BCD12676F75D009D3EF7 /* Configuration.swift */; };
 		457519E9266F6511000C69AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457519E8266F6511000C69AE /* AppDelegate.swift */; };
 		457519EB266F6511000C69AE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457519EA266F6511000C69AE /* SceneDelegate.swift */; };
 		457519ED266F6511000C69AE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457519EC266F6511000C69AE /* ViewController.swift */; };
@@ -20,6 +22,8 @@
 
 /* Begin PBXFileReference section */
 		09223E725BD7A215D2BBB4EB /* Pods-COVID Tracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-COVID Tracker.debug.xcconfig"; path = "Target Support Files/Pods-COVID Tracker/Pods-COVID Tracker.debug.xcconfig"; sourceTree = "<group>"; };
+		4538BCCE2676F645009D3EF7 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		4538BCD12676F75D009D3EF7 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		457519E5266F6511000C69AE /* COVID Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "COVID Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		457519E8266F6511000C69AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		457519EA266F6511000C69AE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +50,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4538BCCC2676F5FA009D3EF7 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				457519FE266F6940000C69AE /* APICaller.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		4538BCCD2676F62B009D3EF7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4538BCCE2676F645009D3EF7 /* Models.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4538BCD02676F67D009D3EF7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				457519FC266F67B5000C69AE /* FilterViewController.swift */,
+				457519EC266F6511000C69AE /* ViewController.swift */,
+				4538BCD12676F75D009D3EF7 /* Configuration.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		457519DC266F6511000C69AE = {
 			isa = PBXGroup;
 			children = (
@@ -67,11 +97,11 @@
 		457519E7266F6511000C69AE /* COVID Tracker */ = {
 			isa = PBXGroup;
 			children = (
+				4538BCD02676F67D009D3EF7 /* View */,
+				4538BCCD2676F62B009D3EF7 /* Models */,
+				4538BCCC2676F5FA009D3EF7 /* Networking */,
 				457519E8266F6511000C69AE /* AppDelegate.swift */,
 				457519EA266F6511000C69AE /* SceneDelegate.swift */,
-				457519FC266F67B5000C69AE /* FilterViewController.swift */,
-				457519EC266F6511000C69AE /* ViewController.swift */,
-				457519FE266F6940000C69AE /* APICaller.swift */,
 				457519EE266F6511000C69AE /* Main.storyboard */,
 				457519F1266F6512000C69AE /* Assets.xcassets */,
 				457519F3266F6512000C69AE /* LaunchScreen.storyboard */,
@@ -94,7 +124,6 @@
 				09223E725BD7A215D2BBB4EB /* Pods-COVID Tracker.debug.xcconfig */,
 				E2C11EDDB305954CC518E032 /* Pods-COVID Tracker.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -214,7 +243,9 @@
 			files = (
 				457519ED266F6511000C69AE /* ViewController.swift in Sources */,
 				457519E9266F6511000C69AE /* AppDelegate.swift in Sources */,
+				4538BCD22676F75D009D3EF7 /* Configuration.swift in Sources */,
 				457519FD266F67B5000C69AE /* FilterViewController.swift in Sources */,
+				4538BCCF2676F645009D3EF7 /* Models.swift in Sources */,
 				457519FF266F6940000C69AE /* APICaller.swift in Sources */,
 				457519EB266F6511000C69AE /* SceneDelegate.swift in Sources */,
 			);

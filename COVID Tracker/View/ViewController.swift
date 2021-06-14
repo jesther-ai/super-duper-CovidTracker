@@ -8,28 +8,21 @@
 import UIKit
 import Charts
 class ViewController: UIViewController {
-    static let numberFormatter: NumberFormatter = {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .decimal
-        return formatter
-    }()
     
     //Creating TableView
-    private let tableView: UITableView = {
-        let table = UITableView(frame: .zero)
-        table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        return table
-    }()
+    private let tableView: UITableView = Configuration.shared.configuredTableView
+    private var scope:APICaller.DataScope = .national
     
     private var dayData:[DayData] = [] {
         didSet{
             DispatchQueue.main.async {
                 self.tableView.reloadData()
+                Configuration.shared.createGraph(dayData: self.dayData, tableView: self.tableView)
             }
         }
     }
     
-    private var scope:APICaller.DataScope = .national
+    
     
     
     override func viewDidLoad() {
@@ -38,6 +31,7 @@ class ViewController: UIViewController {
         configureTable()
         createFilterButton()
         fetchData()
+        
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -88,15 +82,9 @@ extension ViewController:UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let data = dayData[indexPath.row]
         let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = createText(with: data)
+        cell.textLabel?.text = Configuration.shared.createText(with: data)
         
         return cell
-    }
-    
-    private func createText(with data: DayData) -> String?{
-        let dateString = DateFormatter.prettyFormatter.string(from: data.date)
-        let total = Self.numberFormatter.string(from: NSNumber(value: data.count))
-        return "\(dateString): \(total ?? "\(data.count)")"
     }
     
 }
